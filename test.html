@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>testing msgboard</title>
+<script src="./msgboard.js"></script>
+<script><!--
+var mymsg;
+var count = 0;
+
+window.onload = function(){
+	mymsg = new Msgboard(document.getElementById("msg"));
+};
+
+send = function(){
+	mymsg.send({text:"test"+(count++),visibility:5});
+}
+//--></script>
+</head>
+<body>
+<div id="msg"></div>
+<input type="button" onclick="send();">
+</body>
+</html>
