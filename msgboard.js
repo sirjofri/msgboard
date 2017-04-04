@@ -8,7 +8,8 @@ Msgboard.prototype.send = function(msg) {
 	if(typeof msg.text == "undefined")
 		throw new SyntaxError("No text specified!");
 	
-	this.update();
+	if(msg.nocount !== undefined)
+		this.update();
 
 	if(typeof msg.visibility == "undefined")
 		msg.visibility = 1;
@@ -20,8 +21,6 @@ Msgboard.prototype.update = function()
 {
 	this.out.getElementsByTagName("p").foreach((el)=>{
 		var vis = +el.getAttribute("data-visibility");
-		console.log(el);
-		console.log(vis);
 		if(vis == 1)
 			el.parentNode.removeChild(el);
 		if(vis > 1)
