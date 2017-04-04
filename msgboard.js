@@ -2,7 +2,6 @@ HTMLCollection.prototype.foreach=function(f){for(var i=0;i<this.length;i++){f(th
 
 var Msgboard = function(output){
 	this.out = output;
-	this.send({text:"initialized",visibility:0});
 };
 
 Msgboard.prototype.send = function(msg) {
