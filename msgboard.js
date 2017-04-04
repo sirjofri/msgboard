@@ -8,7 +8,7 @@ Msgboard.prototype.send = function(msg) {
 	if(typeof msg.text == "undefined")
 		throw new SyntaxError("No text specified!");
 	
-	if(msg.nocount !== undefined)
+	if(typeof msg.nocount == "undefined")
 		this.update();
 
 	if(typeof msg.visibility == "undefined")

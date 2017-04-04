@@ -14,11 +14,16 @@ window.onload = function(){
 
 send = function(){
 	mymsg.send({text:"test"+(count++),visibility:5});
-}
+};
+
+senduntouched = function() {
+	mymsg.send({text:"test"+(count++),visibility:5,nocount:true});
+};
 //--></script>
 </head>
 <body>
+<input type="button" onclick="send();" value="touched">
+<input type="button" onclick="senduntouched();" value="untouched">
 <div id="msg"></div>
-<input type="button" onclick="send();">
 </body>
 </html>
